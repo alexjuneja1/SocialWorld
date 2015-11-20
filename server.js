@@ -13,7 +13,7 @@ var
 	passportConfig = require('./config/passport.js')
 
 // environment port
-var port = process.env.PORT || 3000
+var port = process.env.PORT || 8000
 
 //user routes
 var userRoutes = require('./routes/user_routes.js')
@@ -21,7 +21,7 @@ var userRoutes = require('./routes/user_routes.js')
 // connect to database
 mongoose.connect('mongodb://localhost/socialworld', function(err){
 	if(err) return console.log('Database connection error')
-	console.log('Connected to MongoDB. Youre in the matrix!')
+	console.log('Connected to MongoDB. You are in the matrix!')
 })
 
 // middleware
