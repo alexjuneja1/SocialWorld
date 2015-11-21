@@ -10,7 +10,9 @@ var
 	bodyParser = require('body-parser'),
 	session = require('express-session'),
 	passport = require('passport'),
-	passportConfig = require('./config/passport.js')
+	passportConfig = require('./config/passport.js'),
+  server  = require('http').createServer(app),
+  Twit = require('twit')
 
 // environment port
 var port = process.env.PORT || 8000
@@ -52,7 +54,33 @@ app.get('/', function(req,res){
 
 app.use('/', userRoutes)
 
+
 // open server port
-app.listen(port, function(){
-	console.log("Server running on port", port)
+server.listen(port, function(){
+	console.log("Server started on port", port)
+})
+
+//Twitter socket
+var io = require('socket.io')(server)
+
+//replace for security reasons
+var twitter = new Twit({
+  consumer_key: '',
+  consumer_secret: '',
+  access_token: '',
+  access_token_secret: ''
+})
+
+console.log(twitter)
+var stream = twitter.stream('statuses/filter', { track: 'obama' })
+
+io.on('connect', function(socket) {
+  stream.on('tweet', function (tweet) {
+    var data = {}
+      data.name = tweet.user.name
+      data.screen_name = tweet.user.screen_name
+      data.text = tweet.text
+      data.user_profile_image = tweet.user.profile_image_url
+      socket.emit('tweets', data)
+});
 })
