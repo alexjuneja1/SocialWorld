@@ -69,7 +69,7 @@ var twitter = new Twit({
   consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
   access_token: process.env.TWITTER_ACCESS_TOKEN,
   access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
-});
+})
 
 console.log(twitter)
 var stream = twitter.stream('statuses/filter', { track: 'obama' })
