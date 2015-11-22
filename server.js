@@ -65,22 +65,27 @@ var io = require('socket.io')(server)
 
 //replace for security reasons
 var twitter = new Twit({
-  consumer_key: process.env.TWITTER_CONSUMER_KEY,
-  consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
-  access_token: process.env.TWITTER_ACCESS_TOKEN,
-  access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
+  consumer_key: 
+  consumer_secret:
+  access_token:
+  access_token_secret:
 });
 
 console.log(twitter)
-var stream = twitter.stream('statuses/filter', { track: 'obama' })
+var stream = twitter.stream('statuses/filter', {locations:[-180,-90,180,90]})
+
+// {locations:[-74,40,-73,41]}
 
 io.on('connect', function(socket) {
   stream.on('tweet', function (tweet) {
-    var data = {}
-      data.name = tweet.user.name
-      data.screen_name = tweet.user.screen_name
-      data.text = tweet.text
-      data.user_profile_image = tweet.user.profile_image_url
-      socket.emit('tweets', data)
-});
+		if (tweet.coordinates){
+			    var data = {}
+			      data.name = tweet.user.name
+			      data.screen_name = tweet.user.screen_name
+			      data.text = tweet.text
+			      data.user_profile_image = tweet.user.profile_image_url
+						data.location = {"lat": tweet.coordinates.coordinates[0],"lng": tweet.coordinates.coordinates[1]}
+						socket.emit('tweets', data)
+				}
+	})
 })
