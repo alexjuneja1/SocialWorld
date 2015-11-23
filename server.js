@@ -12,7 +12,8 @@ var
 	passport = require('passport'),
 	passportConfig = require('./config/passport.js'),
   server  = require('http').createServer(app),
-  Twit = require('twit')
+  Twit = require('twit'),
+	THREE = require("three-js")();
 
 // environment port
 var port = process.env.PORT || 8000
@@ -50,6 +51,10 @@ app.use(ejsLayouts)
 // routes
 app.get('/', function(req,res){
 	res.render('index')
+})
+
+app.get('/globe', function(req,res){
+	res.render('globe')
 })
 
 app.use('/', userRoutes)

@@ -1,3 +1,5 @@
+
+<div id="earth_div" style="width:600px;height:400px;border:1px solid gray; padding:2px;"></div>
 <div class="text-center col-md-8 col-md-offset-2">
     <h1><span class="fa fa-lock"></span>NodeJS + Passport</h1>
     <h3>Login or Sign Up:</h3>
@@ -10,6 +12,14 @@
 <div id="tweet-container"></div>
 
 <script type="text/javascript">
+  function initialize() {
+    var options = { zoom: 3.0, position: [47.19537,8.524404] };
+    var earth = new WE.map('earth_div', options);
+    console.log('globe initialized')
+  }
+
+  var markers = []
+
   var socket = io();
 
     socket.on('connect', function() {
@@ -19,5 +29,7 @@
     socket.on('tweets', function(tweet) {
       var html = '<div class="row"><div class="col-md-6 col-md-offset-3 tweet"><img src="' + tweet.user_profile_image + '" class="avatar pull-left"/><div class="names"><span class="full-name">' + tweet.name + ' </span><span class="username">@' +tweet.screen_name + '</span></div><div class="contents"><span class="text">' + tweet.text + '</span></div></div></div>';
       $('#tweet-container').append(html);
+
+      markers.push(WE.marker([tweet.location.lat, tweet.location.lng]).addTo(earth).bindPopup("This user has tweeted from <b>" + tweet.location.lat + ', ' + tweet.location.lng + '</b>', {maxWidth: 150,maxHeight:100, closeButton: true}));
     });
 </script>
