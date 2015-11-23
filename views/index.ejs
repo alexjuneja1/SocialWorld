@@ -14,7 +14,15 @@
 <script type="text/javascript">
   function initialize() {
     var options = { zoom: 3.0, position: [47.19537,8.524404] };
-    var earth = new WE.map('earth_div', options);
+    var earth = new WE.map('earth_div', {
+      sky: true,
+      atmosphere : true
+    });
+    // This line adds support for OpenStreetMap tiles
+    WE.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
+      attribution: '© OpenStreetMap contributors'
+    }).addTo(earth);
+
     console.log('globe initialized')
   }
 
