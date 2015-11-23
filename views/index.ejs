@@ -15,17 +15,28 @@
   function initialize() {
     var options = { zoom: 3.0,
       position: [34.0500,118.2500],
+      center: [46.8011, 8.2266],
       sky: true,
       atmosphere : true };
     var earth = new WE.map('earth_div', options)
 
     // This line adds support for OpenStreetMap tiles
-    // Alt tiles WE.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
+    // Alt tiles: WE.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
     //   attribution: '© OpenStreetMap contributors'
     // }).addTo(earth);
-    WE.tileLayer('http://otile1.mqcdn.com/tiles/1.0.0/map/{z}/{x}/{y}.jpg', {
-          attribution: 'Tiles Courtesy of MapQuest'
-        }).addTo(earth);
+    // WE.tileLayer('http://otile1.mqcdn.com/tiles/1.0.0/map/{z}/{x}/{y}.jpg', {
+    //       attribution: 'Tiles Courtesy of MapQuest'
+    //     }).addTo(earth);
+    var natural = WE.tileLayer('http://data.webglearth.com/natural-earth-color/{z}/{x}/{y}.jpg', {
+          tileSize: 256,
+          tms: true
+        });
+    natural.addTo(earth);
+    var toner = WE.tileLayer('http://tile.stamen.com/toner/{z}/{x}/{y}.png', {
+          attribution: 'Map tiles by Stamen Design, under CC BY 3.0. Data by OpenStreetMap, under CC BY SA.',
+          opacity: 0.6
+        });
+    toner.addTo(earth);
 
     // Start a rotation animation
     rotation = setInterval(function() {
