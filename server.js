@@ -49,6 +49,8 @@ app.set('view engine', 'ejs')
 app.use(ejsLayouts)
 
 // routes
+// app.use(express.static(__dirname + '/public'))
+
 app.get('/', function(req,res){
 	res.render('index')
 })
@@ -58,7 +60,6 @@ app.get('/globe', function(req,res){
 })
 
 app.use('/', userRoutes)
-
 
 // open server port
 server.listen(port, function(){
