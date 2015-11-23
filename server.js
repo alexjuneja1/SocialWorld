@@ -33,6 +33,9 @@ app.use(cookieParser())
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())
 
+// static assets route
+app.use(express.static(__dirname + '/public'))
+
 // middleware - session tracking
 app.use(session({
 	secret: 'lincolnlogs',
@@ -49,7 +52,6 @@ app.set('view engine', 'ejs')
 app.use(ejsLayouts)
 
 // routes
-// app.use(express.static(__dirname + '/public'))
 
 app.get('/', function(req,res){
 	res.render('index')
