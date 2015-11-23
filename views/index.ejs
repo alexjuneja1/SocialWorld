@@ -27,7 +27,7 @@
     });
 
     socket.on('tweets', function(tweet) {
-      var html = '<div class="row"><div class="col-md-6 col-md-offset-3 tweet"><img src="' + tweet.user_profile_image + '" class="avatar pull-left"/><div class="names"><span class="full-name">' + tweet.name + ' </span><span class="username">@' +tweet.screen_name + '</span></div><div class="contents"><span class="text">' + tweet.text + '</span></div></div></div>';
+      var html = '<div class="row"><div class="col-md-6 col-md-offset-3 tweet"><img src="' + tweet.user_profile_image + '" class="avatar pull-left"/><div class="names"><span class="full-name">' + tweet.name + ' </span><span class="username">@' +tweet.screen_name + '</span></div><div class="contents"><span class="text">' + tweet.text + '</span></div><span class="coordinates"> Location:' + tweet.location.lat + ', ' + tweet.location.lng + '</span></div></div>';
       $('#tweet-container').append(html);
 
       markers.push(WE.marker([tweet.location.lat, tweet.location.lng]).addTo(earth).bindPopup("This user has tweeted from <b>" + tweet.location.lat + ', ' + tweet.location.lng + '</b>', {maxWidth: 150,maxHeight:100, closeButton: true}));
