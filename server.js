@@ -12,7 +12,8 @@ var
 	passport = require('passport'),
 	passportConfig = require('./config/passport.js'),
   server  = require('http').createServer(app),
-  Twit = require('twit')
+  Twit = require('twit'),
+	THREE = require("three-js")();
 
 // environment port
 var port = process.env.PORT || 8000
@@ -52,6 +53,10 @@ app.get('/', function(req,res){
 	res.render('index')
 })
 
+app.get('/globe', function(req,res){
+	res.render('globe')
+})
+
 app.use('/', userRoutes)
 
 
@@ -65,11 +70,11 @@ var io = require('socket.io')(server)
 
 //replace for security reasons
 var twitter = new Twit({
-  consumer_key: 
-  consumer_secret:
-  access_token:
-  access_token_secret:
-});
+  consumer_key: process.env.TWITTER_CONSUMER_KEY,
+  consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
+  access_token: process.env.TWITTER_ACCESS_TOKEN,
+  access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
+})
 
 console.log(twitter)
 var stream = twitter.stream('statuses/filter', {locations:[-180,-90,180,90]})
