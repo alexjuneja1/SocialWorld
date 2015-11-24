@@ -16,7 +16,7 @@ var
 	THREE = require("three-js")();
 
 // environment port
-var port = process.env.PORT || 8000
+var port = process.env.PORT || 9000
 
 //user routes
 var userRoutes = require('./routes/user_routes.js')
@@ -80,20 +80,30 @@ var twitter = new Twit({
 })
 
 console.log(twitter)
-var stream = twitter.stream('statuses/filter', {locations:[-180,-90,180,90]})
-
 // {locations:[-74,40,-73,41]}
 
-io.on('connect', function(socket) {
-  stream.on('tweet', function (tweet) {
+var stream;
+var searchTerm;
+io.on('connect', function(socket){
+	console.log('io connected')
+  socket.on('updateTerm', function(searchTerm){
+		console.log('term updated')
+    socket.emit('updatedTerm', searchTerm);
+    if(stream){
+      console.log('stopped stream');
+      stream.stop();
+    }
+  stream = twitter.stream('statuses/filter', {track: searchTerm, language: 'en'}, {locations:[-180,-90,180,90]});
+  stream.on('tweet', function(tweet){
 		if (tweet.coordinates){
-			    var data = {}
-			      data.name = tweet.user.name
-			      data.screen_name = tweet.user.screen_name
-			      data.text = tweet.text
-			      data.user_profile_image = tweet.user.profile_image_url
-						data.location = {"lat": tweet.coordinates.coordinates[0],"lng": tweet.coordinates.coordinates[1]}
-						socket.emit('tweets', data)
-				}
-	})
-})
+		  var data = {};
+		    data.name = tweet.user.name;
+		    data.screen_name = tweet.user.screen_name;
+		    data.text = tweet.text;
+		    data.user_profile_image = tweet.user.profile_image_url;
+				data.location = {"lat": tweet.coordinates.coordinates[0],"lng": tweet.coordinates.coordinates[1]}
+		    socket.emit('tweets', data);
+		}
+  });
+});
+});
