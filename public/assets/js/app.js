@@ -55,7 +55,7 @@ $(function () {
 
     var maxTweets = 0;
     socket.on('tweets', function(tweet) {
-      if (maxAppend >= 15) return;
+      if (maxTweets >= 15) return;
       var html = '<div class="row"><div class="col-md-6 col-md-offset-3 tweet"><img src="' + tweet.user_profile_image + '" class="avatar pull-left"/><div class="names"><span class="full-name">' + tweet.name + ' </span><span class="username">@' +tweet.screen_name + '</span></div><div class="contents"><span class="text">' + tweet.text + '</span></div><span class="coordinates"> Location:' + tweet.location.lat + ', ' + tweet.location.lng + '</span></div></div>';
       maxTweets++;
       $('#tweet-container').prepend(html);
@@ -63,7 +63,7 @@ $(function () {
       // cap tweets loaded onto glove
       //GOOGLE GLOBE MARKERS
       // globe.addData( data[i][1], {format: 'magnitude', name: data[i][0]} )
-      globe.addData([tweet.location.lat, tweet.location.lng, 0.02, 0x00FF66], { format: 'magnitude', name: 'twitter'})
+      globe.addData([tweet.location.lat, tweet.location.lng, 0.3, 0x33ff6d], { format: 'magnitude', name: 'twitter'})
       globe.createPoints()
       globe.frameRender()
       // globe.animate()
