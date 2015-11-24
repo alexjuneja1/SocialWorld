@@ -165,6 +165,7 @@ DAT.Globe = function(container, opts) {
     }, false);
   }
 
+//ADD TWITTER LAT / LNG CALLS HERE
   function addData(data, opts) {
     var lat, lng, size, color, i, step, colorFnWrapper;
 
