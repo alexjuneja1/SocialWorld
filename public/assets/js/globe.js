@@ -367,6 +367,11 @@ DAT.Globe = function(container, opts) {
     renderer.render(scene, camera);
   }
 
+  function frameRender() {
+  	requestAnimationFrame( animate );
+  	renderer.render( scene, camera );
+  }
+
   init();
   this.animate = animate;
 
@@ -403,7 +408,7 @@ DAT.Globe = function(container, opts) {
   this.createPoints = createPoints;
   this.renderer = renderer;
   this.scene = scene;
-
+  this.frameRender = frameRender;
   return this;
 
 };
