@@ -57,5 +57,5 @@ $(function () {
     //   console.log('Google webGl-globe initialized: ' + globe);
     //   globe.createPoints()
     //   globe.animate()
-  }
+  // }
 });

@@ -7,6 +7,8 @@
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script src="//cdnjs.cloudflare.com/ajax/libs/stats.js/r11/Stats.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.18/angular.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.18/angular-resource.min.js"></script>
     <!-- move to assets->js folder -->
     <script type="text/javascript" src="/socket.io/socket.io.js"></script>
 </head>
@@ -43,6 +45,7 @@
     </div><!-- /.container-fluid -->
 </nav>
 
+
     <form action="/" name="search" id="search">
       <div class="form-group">
         <input id="search-term" type="text" class="form-control">
@@ -53,6 +56,10 @@
   <div id="globe-container"></div>
 
   <div id="tweet-container"></div>
+
+  <!-- Container for the Angular application -->
+  <div id="tweet-hud" ng-controller="TweetHud">
+
 
   <!-- Globe Dependencies -->
   <script src="assets/js/Detector.js"></script>

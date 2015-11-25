@@ -31,6 +31,7 @@
   },
   "homepage": "https://github.com/bfrager/SocialWorld#readme",
   "dependencies": {
+    "angular": "^1.4.8",
     "bcrypt": "^0.8.5",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.14.1",
