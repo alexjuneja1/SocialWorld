@@ -33,20 +33,22 @@
       <button type="button" id="signup">Sign Up</button>
     </div>
   </nav>  -->
-<div class="container">
-  <div class="ui secondary  menu">
+<div class="navbar-container">
+  <div class="ui secondary  menu" id="navbar">
     <a class="item" id="brand" href="#">
       Social World
     </a>
-    <div class="right menu">
+    <div class="menu right floated">
       <div class="item">
-        <div class="ui icon input">
+        <div class="ui icon input" id="searchbar">
           <form action="/" name="search" id="search">
-            <input type="text" class="form-control" id="search-term" placeholder="Search...">
+            <input type="text" class="form-control" id="search-term" placeholder="Search with a hashtag">
             <i class="search link icon"></i>
           </form>
         </div>
       </div>
+    </div>
+    <div class="right menu">
       <a class="ui item" id="login">
         Login
       </a>
@@ -98,7 +100,7 @@
   <div id="globe-container"></div><br>
 
   <div class="ui grid">
-    <div class="four wide column"><div id="posts">Posts</div></div>
+    <div class="four wide column"></div>
     <div class="four wide column"></div>
     <div class="four wide column"></div>
     <div class="four wide column"></div>
