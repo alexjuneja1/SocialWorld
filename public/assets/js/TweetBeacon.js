@@ -16,13 +16,13 @@ TweetBeacon = function(tweet) {
 
   // Set base color depending on sentiment score
   this.color = 0xFFFFFF;
-
-  if (tweet.sentiment.score < 0) {
-    this.color = 0xFF0000;
-  }
-  else if (tweet.sentiment.score > 0) {
-    this.color = 0xDDDD00;
-  }
+  //
+  // if (tweet.sentiment.score < 0) {
+  //   this.color = 0xFF0000;
+  // }
+  // else if (tweet.sentiment.score > 0) {
+  //   this.color = 0xDDDD00;
+  // }
 
   this.addBeam();
   this.addShockwave();
@@ -68,7 +68,7 @@ TweetBeacon.prototype.addShockwave = function () {
     opacity: 1.0
   });
 
-  var radius = 20;
+  var radius = 40;
   var segments = 16 ;
 
   var circleGeometry = new THREE.CircleGeometry(radius, segments);
@@ -105,7 +105,9 @@ TweetBeacon.prototype.show = function () {
   var time = 4;
 
   // Define the line height based on the sentiment score
-  this.beamHeight = 400 + Math.abs(this.tweet.sentiment.score) * 100
+  // this.beamHeight = 400 + Math.abs(this.tweet.sentiment.score) * 100
+
+  this.beamHeight = 400
 
   // Animate opacity
   TweenLite.to(this.lineMesh.material, time, {
@@ -124,52 +126,52 @@ TweetBeacon.prototype.show = function () {
   });
 
   // Set the life span of the beacon before it shoots into space
-  setTimeout(function () {
-    self.hide()
-  }, time * 1000);
+  // setTimeout(function () {
+  //   self.hide()
+  // }, time * 1000);
 };
 
 /**
  *  Animation of beacon shooting into space
  */
-TweetBeacon.prototype.hide = function () {
-
-  var self = this;
-  var time = 10;
-
-  // Animate opacity
-  TweenLite.to(this.lineMesh.material, time, {
-    opacity: 0.0,
-    ease: Quart.easeOut,
-    onComplete: function () {
-      // when animation completes callback to notify
-      if (self.onHideCallback) {
-        self.onHideCallback();
-      }
-    }
-  });
-
-  // Animate length of line
-  TweenLite.to(this.lineMesh.geometry.vertices[0], time / 2, {
-    z: this.beamHeight,
-    ease: Quart.easeOut,
-    onUpdate: function () {
-      // this is required for Three.js to re-render the line
-      self.lineMesh.geometry.verticesNeedUpdate = true;
-    }
-  });
-
-  // Animate distance of line from beacon base / surface of earth
-  TweenLite.to(this.lineMesh.position, time, {
-    z: this.beamHeight + 300,
-    ease: Quart.easeOut
-  });
-
-}
+// TweetBeacon.prototype.hide = function () {
+//
+//   var self = this;
+//   var time = 10;
+//
+//   // Animate opacity
+//   TweenLite.to(this.lineMesh.material, time, {
+//     opacity: 0.0,
+//     ease: Quart.easeOut,
+//     onComplete: function () {
+//       // when animation completes callback to notify
+//       if (self.onHideCallback) {
+//         self.onHideCallback();
+//       }
+//     }
+//   });
+//
+//   // Animate length of line
+//   TweenLite.to(this.lineMesh.geometry.vertices[0], time / 2, {
+//     z: this.beamHeight,
+//     ease: Quart.easeOut,
+//     onUpdate: function () {
+//       // this is required for Three.js to re-render the line
+//       self.lineMesh.geometry.verticesNeedUpdate = true;
+//     }
+//   });
+//
+//   // Animate distance of line from beacon base / surface of earth
+//   TweenLite.to(this.lineMesh.position, time, {
+//     z: this.beamHeight + 300,
+//     ease: Quart.easeOut
+//   });
+//
+// }
 
 /**
  * Sets a callback for aniamtion complete and beacon has expired
  */
-TweetBeacon.prototype.onHide = function (callback) {
-  this.onHideCallback = callback;
-}
+// TweetBeacon.prototype.onHide = function (callback) {
+//   this.onHideCallback = callback;
+// }

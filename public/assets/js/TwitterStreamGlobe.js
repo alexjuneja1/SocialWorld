@@ -168,10 +168,10 @@
 	  beacon.lookAt(earthMesh.position);
 		beaconHolder.add(beacon);
 
-		// remove beacon from scene when it expires itself
-		beacon.onHide(function () {
-			beaconHolder.remove(beacon);
-		});
+		// // remove beacon from scene when it expires itself
+		// beacon.onHide(function () {
+		// 	beaconHolder.remove(beacon);
+		// });
 	}
 
 	/**
