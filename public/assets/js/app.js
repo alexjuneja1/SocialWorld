@@ -44,5 +44,6 @@ $(function () {
       globe.frameRender()
       globe.animate()
 
-  }
+    }
+
 });
