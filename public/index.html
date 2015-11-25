@@ -5,6 +5,8 @@
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+    <script src="semantic/dist/semantic.min.js"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <!-- move to assets->js folder -->
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
@@ -12,13 +14,23 @@
     <script type="text/javascript" src="/socket.io/socket.io.js"></script>
 </head>
 <body>
-
-<form action="/" name="search" id="search">
-  <div class="form-group">
-    <input id="search-term" type="text" class="form-control">
-  </div>
-  <input type="submit" class="btn btn-default">
-</form>
+  <nav class="navbar navbar-default row">
+    <div class="navbar-brand col-md-4" id="brand">
+      <a href="#">Social World</a>
+    </div>
+    <div class="col-md-4 nav navbar-nav" id="search-nav">
+      <form action="/" name="search" id="search">
+          <div class="form-group">
+            <input id="search-term" type="text" class="form-control">
+          </div>
+          <input type="submit" class="btn btn-default">
+      </form>
+    </div>
+    <div class="col-md-4 nav navbar-nav" id="signup-nav">
+      <button type="button" id="login">Login</button>
+      <button type="button" id="signup">Sign Up</button>
+    </div>
+  </nav>
 
   <div class="overlay" id="overlays-container">
 
@@ -27,10 +39,6 @@
     <div class="overlay overlay-element" id="signup-container"></div>
 
   </div>
-
-  <button type="button" id="login">Login</button>
-
-  <button type="button" id="signup">Sign Up</button>
 
   <script type="text/javascript">
 
@@ -64,7 +72,16 @@
 
   <div id="globe-container"></div>
 
-  <div id="tweet-container"></div>
+  <div class="ui grid">
+    <div class="four wide column"></div>
+    <div class="four wide column"></div>
+    <div class="four wide column"></div>
+    <div class="four wide column"><div id="tweet-container"></div></div>
+    <div class="four wide column"></div>
+    <div class="four wide column"></div>
+    <div class="four wide column"></div>
+    <div class="four wide column"></div>
+  </div>
 
 
   <script src="assets/js/Detector.js"></script>

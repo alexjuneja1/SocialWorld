@@ -79,10 +79,10 @@ var io = require('socket.io')(server)
 
 //replace for security reasons
 var twitter = new Twit({
-  consumer_key: process.env.TWITTER_CONSUMER_KEY,
-  consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
-  access_token: process.env.TWITTER_ACCESS_TOKEN,
-  access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
+  consumer_key: 'NhLqnXQuYUa0JZNLnGTdJeJRi',
+  consumer_secret: 'lixdhEaLQlXbTvb6Piu9YsjElDDb5EneHPlXhsS56O1rtJMUek',
+  access_token: '3160155739-YZySxWlm2TYrmwMt2xrR3pFuVy5J8ud2u5r5L5Q',
+  access_token_secret: 'LkpfCTfAyxUNX1PqRiHs23Ns9Ict5b9lBAFk2TB2VZ2aa'
 })
 
 console.log(twitter)
@@ -107,15 +107,16 @@ io.on('connect', function(socket){
 				})
 				//  , {locations:[-180,-90,180,90]})
 		  stream.on('tweet', function (tweet) {
-				// console.log(Object.keys(tweet));
-				if (tweet.place){
+				// console.log(Object.keys(tweet.coordinates));
+				if (tweet.place || tweet.coordinates ){
 					console.log(tweet.place.bounding_box.coordinates[0][0])
+					console.log(tweet.coordinates)
 					    var data = {}
 					      data.name = tweet.user.name
 					      data.screen_name = tweet.user.screen_name
 					      data.text = tweet.text
 					      data.user_profile_image = tweet.user.profile_image_url
-								data.location = {"lat": tweet.place.bounding_box.coordinates[0][0][0],"lng": tweet.place.bounding_box.coordinates[0][0][1]}
+								data.location = {"lat": tweet.place.bounding_box.coordinates[0][0][1],"lng": tweet.place.bounding_box.coordinates[0][0][0]}
 								console.log(data)
 								socket.emit('tweets', data)
 						}
