@@ -3,10 +3,60 @@ body {
   background-color: black;
 }
 
+.navbar-container {
+  background-color: black;
+  position: relative;
+  padding-top: 5px;
+}
+
+
+#searchbar {
+  opacity: 0.6;
+  border: 3px solid #4195fc; /* some kind of blue border */
+
+   /* other CSS styles */
+
+   /* round the corners */
+   -webkit-border-radius: 6px;
+      -moz-border-radius: 6px;
+           border-radius: 6px;
+
+
+   /* make it glow! */
+   -webkit-box-shadow: 0px 0px 6px #4195fc;
+      -moz-box-shadow: 0px 0px 6px #4195fc;
+           box-shadow: 0px 0px 6px #4195fc;
+
+}
+
+#brand {
+  color: white;
+  font-size: 40px;
+}
+
+#login {
+  color: white;
+  font-size: 40px;
+}
+
+#login:hover {
+  color: gray;
+}
+
+#signup {
+  color: white;
+  font-size: 40px;
+}
+
+#signup:hover {
+  color: gray;
+}
+
 #globe-container {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: auto;
+  margin-top: 0px
 }
 
 #tweet-container {
@@ -25,11 +75,6 @@ body {
 	height: 22px;
 	width: 200px;
   text-align: center;
-}
-
-.navbar:hover {
-    opacity: 1.0;
-    filter: alpha(opacity=100); /* For IE8 and earlier */
 }
 
 .overlay{
