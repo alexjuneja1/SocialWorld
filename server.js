@@ -62,6 +62,12 @@ app.get('/globe', function(req,res){
 })
 
 app.use('/', userRoutes)
+app.get('/login', function(req,res){
+	res.render('login')
+})
+app.get('/signup', function(req,res){
+	res.render('signup')
+})
 
 // open server port
 server.listen(port, function(){
