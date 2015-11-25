@@ -5,6 +5,7 @@ $(function () {
     var socket = io()
 
     socket.on('connect', function() {
+      console.log('socket stream connected!')
       // Clear publish interval just be sure they don't stack up (probably not necessary)
       if (publishInterval) {
         clearInterval(publishInterval);
@@ -20,9 +21,10 @@ $(function () {
 
     var maxTweets = 0;
     socket.on('tweets', function(tweet) {
-      console.log(tweet)
+      console.log('tweet object = ', tweet)
       // save the Tweet so that the very latest Tweet is available and can be published
       cachedTweet = tweet
+      console.log('cached Tweet = ', cachedTweet)
       if (maxTweets >= 15) return;
       var html = '<div class="row"><div class="col-md-6 col-md-offset-3 tweet"><img src="' + tweet.user_profile_image + '" class="avatar pull-left"/><div class="names"><span class="full-name">' + tweet.name + ' </span><span class="username">@' +tweet.screen_name + '</span></div><div class="contents"><span class="text">' + tweet.text + '</span></div><span class="coordinates"> Location:' + tweet.location.lat + ', ' + tweet.location.lng + '</span></div></div>';
       maxTweets++;
@@ -43,17 +45,17 @@ $(function () {
     })
 
   //GOOGLE WEBGL-GLOBE
-    if(!Detector.webgl){
-      Detector.addGetWebGLMessage();
-    } else {
-
-      // Where to put the globe?
-      var container = document.getElementById( 'globe-container' );
-
-      // Make the globe
-      globe = new DAT.Globe( container );
-      console.log('Google webGl-globe initialized: ' + globe);
-      globe.createPoints()
-      globe.animate()
+    // if(!Detector.webgl){
+    //   Detector.addGetWebGLMessage();
+    // } else {
+    //
+    //   // Where to put the globe?
+    //   var container = document.getElementById( 'globe-container' );
+    //
+    //   // Make the globe
+    //   globe = new DAT.Globe( container );
+    //   console.log('Google webGl-globe initialized: ' + globe);
+    //   globe.createPoints()
+    //   globe.animate()
   }
 });
