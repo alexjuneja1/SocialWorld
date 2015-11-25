@@ -107,9 +107,10 @@ io.on('connect', function(socket){
 				})
 				//  , {locations:[-180,-90,180,90]})
 		  stream.on('tweet', function (tweet) {
-				// console.log(Object.keys(tweet));
-				if (tweet.place){
+				// console.log(Object.keys(tweet.coordinates));
+				if (tweet.place || tweet.coordinates ){
 					console.log(tweet.place.bounding_box.coordinates[0][0])
+					console.log(tweet.coordinates)
 					    var data = {}
 					      data.name = tweet.user.name
 					      data.screen_name = tweet.user.screen_name
