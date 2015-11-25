@@ -1,18 +1,55 @@
 body {
   color: white;
-  /*background-color: black;*/
+  background-color: black;
+}
+
+.navbar-container {
+  background-color: black;
+  position: relative;
+  padding-top: 5px;
+}
+
+
+#searchbar {
+  opacity: 0.1;
+}
+
+#search-term {
+  opacity: 1.0;
+  color: white;
+}
+
+#brand {
+  color: white;
+  font-size: 40px;
+}
+
+#brand:hover {
+  color: gray;
+}
+
+#login {
+  color: white;
+  font-size: 40px;
+}
+
+#login:hover {
+  color: gray;
+}
+
+#signup {
+  color: white;
+  font-size: 40px;
+}
+
+#signup:hover {
+  color: gray;
 }
 
 #globe-container {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: auto;
-}
-
-#posts {
-  text-align: center;
-  font-size: 30px;
-  text-decoration: underline;
 }
 
 #tweet-container {
