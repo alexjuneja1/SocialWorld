@@ -2,19 +2,21 @@
 <html>
 <head>
     <title>Social World</title>
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
-    <script src="semantic/dist/semantic.min.js"></script>
-    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <!-- move to assets->js folder -->
+    <!-- css files -->
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.6/semantic.min.css">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <!-- js files -->
+    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.6/semantic.min.js"></script>
+    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/socket.io/socket.io.js"></script>
 </head>
 <body>
-  <nav class="navbar navbar-default row">
+  <!-- <nav class="navbar navbar-default row">
     <div class="navbar-brand col-md-4" id="brand">
       <a href="#">Social World</a>
     </div>
@@ -30,7 +32,30 @@
       <button type="button" id="login">Login</button>
       <button type="button" id="signup">Sign Up</button>
     </div>
-  </nav>
+  </nav>  -->
+<div class="container">
+  <div class="ui secondary  menu">
+    <a class="item" id="brand" href="#">
+      Social World
+    </a>
+    <div class="right menu">
+      <div class="item">
+        <div class="ui icon input">
+          <form action="/" name="search" id="search">
+            <input type="text" class="form-control" id="search-term" placeholder="Search...">
+            <i class="search link icon"></i>
+          </form>
+        </div>
+      </div>
+      <a class="ui item" id="login">
+        Login
+      </a>
+      <a class="ui item" id="signup">
+        Sign Up
+      </a>
+    </div>
+  </div>
+</div>
 
   <div class="overlay" id="overlays-container">
 
@@ -70,17 +95,14 @@
 
   </script>
 
-  <div id="globe-container"></div>
+  <div id="globe-container"></div><br>
 
   <div class="ui grid">
+    <div class="four wide column"><div id="posts">Posts</div></div>
     <div class="four wide column"></div>
     <div class="four wide column"></div>
     <div class="four wide column"></div>
     <div class="four wide column"><div id="tweet-container"></div></div>
-    <div class="four wide column"></div>
-    <div class="four wide column"></div>
-    <div class="four wide column"></div>
-    <div class="four wide column"></div>
   </div>
 
 

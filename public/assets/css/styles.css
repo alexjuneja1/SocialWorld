@@ -1,6 +1,6 @@
 body {
   color: white;
-  background-color: black;
+  /*background-color: black;*/
 }
 
 #globe-container {
@@ -9,27 +9,14 @@ body {
   margin-bottom: auto;
 }
 
-#tweet-container {
-      border:2px solid #456879 ;
-      border-radius:10px;
-      height: 22px;
-      width: 200px;
-   text-align: center;
-}
-
-.navbar {
-    opacity: 0.4;
-    filter: alpha(opacity=40); /* For IE8 and earlier */
-	border:2px solid #456879;
-	border-radius:10px;
-	height: 22px;
-	width: 200px;
+#posts {
   text-align: center;
+  font-size: 30px;
+  text-decoration: underline;
 }
 
-.navbar:hover {
-    opacity: 1.0;
-    filter: alpha(opacity=100); /* For IE8 and earlier */
+#tweet-container {
+
 }
 
 .overlay{
