@@ -115,7 +115,7 @@ io.on('connect', function(socket){
 					      data.screen_name = tweet.user.screen_name
 					      data.text = tweet.text
 					      data.user_profile_image = tweet.user.profile_image_url
-								data.location = {"lat": tweet.place.bounding_box.coordinates[0][0][0],"lng": tweet.place.bounding_box.coordinates[0][0][1]}
+								data.location = {"lat": tweet.place.bounding_box.coordinates[0][0][1],"lng": tweet.place.bounding_box.coordinates[0][0][0]}
 								console.log(data)
 								socket.emit('tweets', data)
 						}
