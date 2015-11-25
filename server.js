@@ -118,6 +118,16 @@ io.on('connect', function(socket){
 								data.location = {"lat": tweet.place.bounding_box.coordinates[0][0][1],"lng": tweet.place.bounding_box.coordinates[0][0][0]}
 								console.log(data)
 								socket.emit('tweets', data)
+				} else if (tweet.coordinates && tweet.coordinates.coordinates){
+					console.log(tweet.coordinates.coordinates)
+							var data = {}
+								data.name = tweet.user.name
+								data.screen_name = tweet.user.screen_name
+								data.text = tweet.text
+								data.user_profile_image = tweet.user.profile_image_url
+								data.location = {"lat": tweet.coordinates.coordinates[0][1],"lng": tweet.coordinates.coordinates[0][0]}
+								console.log(data)
+								socket.emit('tweets', data)
 						}
 			})
 	})
