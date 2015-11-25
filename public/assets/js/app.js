@@ -7,16 +7,6 @@ $(function () {
     socket.on('connect', function() {
       console.log('socket stream connected!')
       // Clear publish interval just be sure they don't stack up (probably not necessary)
-      if (publishInterval) {
-        clearInterval(publishInterval);
-      }
-      // Only publish a Tweet every 100 millseconds so that the browser view is not overloaded
-      // This will provide a predictable and consistent flow of real-time Tweets
-      publishInterval = setInterval(function () {
-        if (cachedTweet) {
-          publishTweet(cachedTweet);
-        }
-      }, 100); // Adjust the interval to increase or decrease the rate at which Tweets sent to the clients
     });
 
     var maxTweets = 0;
@@ -30,12 +20,28 @@ $(function () {
       maxTweets++;
       $('#tweet-container').prepend(html);
 
+      if (publishInterval) {
+        clearInterval(publishInterval);
+      }
+      // Only publish a Tweet every 100 millseconds so that the browser view is not overloaded
+      // This will provide a predictable and consistent flow of real-time Tweets
+      publishInterval = setInterval(function () {
+        if (cachedTweet) {
+          publishTweet(cachedTweet);
+        }
+      }, 100); // Adjust the interval to increase or decrease the rate at which Tweets sent to the clients
+
+
+      //TWITTER GLOBE MARKERS
+      TwtrGlobe.onTweet(cachedTweet)
+
+
       //GOOGLE GLOBE MARKERS
       // globe.addData( data[i][1], {format: 'magnitude', name: data[i][0]} )
-      globe.addData([tweet.location.lat, tweet.location.lng, 0.5, 0x33ff6d], { format: 'magnitude', name: 'twitter'})
-      globe.createPoints()
-      globe.frameRender()
-      globe.animate()
+      // globe.addData([tweet.location.lat, tweet.location.lng, 0.5, 0x33ff6d], { format: 'magnitude', name: 'twitter'})
+      // globe.createPoints()
+      // globe.frameRender()
+      // globe.animate()
     });
 
     searchForm.on('submit', function(evt){

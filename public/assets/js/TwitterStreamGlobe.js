@@ -21,7 +21,7 @@
   var rotation = { x: 0, y: 0 },
       target = { x: Math.PI*3/2, y: Math.PI / 6.0 },
       targetOnDown = { x: 0, y: 0 };
-
+  var distance = 100000, distanceTarget = 100000;
 	/**
 	 *	Initiates WebGL view with Three.js
 	 */
@@ -146,8 +146,8 @@
 
 		// extract a latlong from the Tweet object
 		var latlong = {
-			lat: tweet.coordinates.coordinates[1],
-			lon: tweet.coordinates.coordinates[0]
+			lat: tweet.location.lat,
+			lon: tweet.location.lng
 		};
 
 		var position = latLonToVector3(latlong.lat, latlong.lon);
