@@ -73,10 +73,10 @@ var io = require('socket.io')(server)
 
 //replace for security reasons
 var twitter = new Twit({
-  consumer_key: process.env.TWITTER_CONSUMER_KEY,
-  consumer_secret: process.env.TWITTER_CONSUMER_SECRET,
-  access_token: process.env.TWITTER_ACCESS_TOKEN,
-  access_token_secret: process.env.TWITTER_ACCESS_TOKEN_SECRET
+  consumer_key: 'NhLqnXQuYUa0JZNLnGTdJeJRi',
+  consumer_secret: 'lixdhEaLQlXbTvb6Piu9YsjElDDb5EneHPlXhsS56O1rtJMUek',
+  access_token: '3160155739-YZySxWlm2TYrmwMt2xrR3pFuVy5J8ud2u5r5L5Q',
+  access_token_secret: 'LkpfCTfAyxUNX1PqRiHs23Ns9Ict5b9lBAFk2TB2VZ2aa'
 })
 
 console.log(twitter)

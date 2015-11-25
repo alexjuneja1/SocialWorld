@@ -5,12 +5,14 @@
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/css/styles.css">
     <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+    <script src="semantic/dist/semantic.min.js"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
     <!-- move to assets->js folder -->
     <script type="text/javascript" src="/socket.io/socket.io.js"></script>
 </head>
 <body>
-  <nav class="hide navbar navbar-default">
+  <nav class="navbar navbar-default">
     <div class="container-fluid">
   <!-- Brand and toggle get grouped for better mobile display -->
       <div class="navbar-header">
@@ -20,7 +22,7 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="#">Social World</a>
+        <a class="navbar-brand" href="/">Social World</a>
       </div>
 
       <!-- Collect the nav links, forms, and other content for toggling -->
@@ -31,9 +33,9 @@
         </ul>
         <form class="navbar-form navbar-left" role="search">
           <div class="form-group">
-            <input type="text" class="form-control" placeholder="Search for a hashtag!">
+            <input type="text" class="form-control col-md-offset-8" placeholder="Search for a hashtag!">
           </div>
-          <button type="submit" class="btn btn-default">Submit</button>
+          <button type="submit" class="btn btn-default col-xs-1"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
         </form>
         <ul class="nav navbar-nav navbar-right">
           <li><a href="#">View Profile</a></li>
@@ -42,16 +44,18 @@
     </div><!-- /.container-fluid -->
 </nav>
 
-    <form action="/" name="search" id="search">
-      <div class="form-group">
-        <input id="search-term" type="text" class="form-control">
-      </div>
-      <input type="submit" class="btn btn-default">
-    </form>
-
   <div id="globe-container"></div>
 
-  <div id="tweet-container"></div>
+  <div class="ui grid">
+    <div class="four wide column"></div>
+    <div class="four wide column"></div>
+    <div class="four wide column"></div>
+    <div class="four wide column"><div id="tweet-container"></div></div>
+    <div class="four wide column"></div>
+    <div class="four wide column"></div>
+    <div class="four wide column"></div>
+    <div class="four wide column"></div>
+  </div>
 
   <script src="assets/js/Detector.js"></script>
   <script src="assets/js/three.min.js"></script>
