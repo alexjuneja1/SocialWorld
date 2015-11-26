@@ -13,26 +13,14 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.6/semantic.min.js"></script>
     <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/stats.js/r11/Stats.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.18/angular.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.18/angular-resource.min.js"></script>
     <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
 </head>
 <body>
-  <!-- <nav class="navbar navbar-default row">
-    <div class="navbar-brand col-md-4" id="brand">
-      <a href="#">Social World</a>
-    </div>
-    <div class="col-md-4 nav navbar-nav" id="search-nav">
-      <form action="/" name="search" id="search">
-          <div class="form-group">
-            <input id="search-term" type="text" class="form-control">
-          </div>
-          <input type="submit" class="btn btn-default">
-      </form>
-    </div>
-    <div class="col-md-4 nav navbar-nav" id="signup-nav">
-      <button type="button" id="login">Login</button>
-      <button type="button" id="signup">Sign Up</button>
-    </div>
-  </nav>  -->
+
 <div class="navbar-container">
   <div class="ui secondary  menu" id="navbar">
     <a class="item" id="brand" href="#">
@@ -106,10 +94,26 @@
   </div>
 
 
+  <!-- Container for the Angular application -->
+  <div id="tweet-hud" ng-controller="TweetHud">
+
+
+  <!-- Globe Dependencies -->
   <script src="assets/js/Detector.js"></script>
   <script src="assets/js/three.min.js"></script>
   <script src="assets/js/Tween.js"></script>
-  <script src="assets/js/globe.js"></script>
+
+  <!-- Google Globe JS -->
+  <!-- <script src="assets/js/globe.js"></script> -->
+
+  <!-- Twitter Globe JS -->
+  <script src="assets/js/shaders.js"></script>
+  <script src="assets/js/TweetBeacon.js"></script>
+  <script src="assets/js/TwitterStreamGlobe.js"></script>
+  <script src="assets/js/TweetHud.js"></script>
+
+  <!-- Our app -->
   <script src="assets/js/app.js"></script>
+
 </body>
 </html>
