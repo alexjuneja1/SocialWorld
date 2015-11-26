@@ -156,6 +156,8 @@ DAT.Globe = function(container, opts) {
 
     window.addEventListener('resize', onWindowResize, false);
 
+    // window.addEventListener ('resize', onWindowResize);
+
     container.addEventListener('mouseover', function() {
       overRenderer = true;
     }, false);
