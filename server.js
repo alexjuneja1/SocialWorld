@@ -119,8 +119,8 @@ io.on('connect', function(socket){
 								console.log(data)
 								socket.emit('tweets', data)
 				} else if (tweet.coordinates && tweet.coordinates.coordinates){
-						console.log(tweet.coordinates)
-			        var data = {};
+					console.log(tweet.coordinates.coordinates)
+							var data = {}
 								data.name = tweet.user.name
 								data.screen_name = tweet.user.screen_name
 								data.text = tweet.text
@@ -128,7 +128,7 @@ io.on('connect', function(socket){
 				        data.location = {"lat": tweet.coordinates.coordinates[0], "lng": tweet.coordinates.coordinates[1]}
 								console.log(data)
 				        socket.emit('tweets', data);  //sending info back to the client
-      	}
+						}
 			})
 	})
 })
