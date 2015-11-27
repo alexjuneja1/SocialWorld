@@ -39,8 +39,8 @@
       <a class="ui item" id="login">
         Login
       </a>
-      <a class="ui item" id="signup">
-        Sign Up
+      <a class="ui item" id="showhide">
+        <button> Show/Hide </button>
       </a>
     </div>
   </div>
@@ -69,29 +69,17 @@
     })
 })
 
-  $('#signup').on('click', function(evt){
-  $.ajax({
-    url: '/signup'
-    ,method: 'GET'
-    ,success: function(data){
-      console.log('loginpage' + data)
-      $('#signup-container').html(data)
-      $('#overlays-container').toggle()
-      $('#signup-container').toggle()
-      }
-    })
-  })
+  $("button").click(function(){
+    $("#tweet-container").toggle();
+});
 
   </script>
 
-  <div id="globe-container"></div><br>
-
   <div class="ui grid">
-    <div class="four wide column"></div>
-    <div class="four wide column"></div>
-    <div class="four wide column"></div>
-    <div class="four wide column"><div id="tweet-container"></div></div>
+    <div class="col-sm-8" id="globe-container"></div>
+    <div class="col-sm-4" id="tweet-container"></div>
   </div>
+
 
 
   <!-- Container for the Angular application -->

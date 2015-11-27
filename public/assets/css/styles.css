@@ -9,6 +9,10 @@ body {
   padding-top: 5px;
 }
 
+#tweet-container {
+  padding-top: 30px;
+}
+
 
 #searchbar {
   opacity: 0.6;
