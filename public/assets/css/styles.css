@@ -3,6 +3,22 @@ body {
   background-color: black;
 }
 
+h1 {
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+h2 {
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+p {
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+#stats {
+  display: none;
+}
+
 .navbar-container {
   background-color: black;
   position: relative;
@@ -11,6 +27,7 @@ body {
 
 #tweet-container {
   padding-top: 30px;
+  display: none;
 }
 
 
@@ -35,33 +52,34 @@ body {
 
 #brand {
   color: white;
-  font-size: 40px;
+  font-size: 50px;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 1;
+  text-align: center
 }
 
 #login {
   color: white;
-  font-size: 40px;
+  font-size: 30px;
+  font-family: 'Helvetica Neue', sans-serif;
+  letter-spacing: -1px;
+  line-height: 1;
+  text-align: center
 }
 
 #login:hover {
   color: gray;
 }
 
-#signup {
-  color: white;
-  font-size: 40px;
-}
 
-#signup:hover {
-  color: gray;
-}
-
-#globe-container {
+/*#globe-container {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: auto;
   margin-top: 0px
-}
+}*/
 
 .navbar {
   opacity: 0.4;
@@ -90,6 +108,7 @@ body {
  border-color: #4ECDC4 ;
  border-radius: 15px;
  z-index: 11;
+ font-family: 'Helvetica Neue', sans-serif;
  overflow: auto;
 }
 
@@ -97,11 +116,13 @@ body {
  position: relative;
  padding-right: 200px;
  top: 40%;
+ font-family: 'Helvetica Neue', sans-serif;
  transform: translateY(-50%);*/
 }
 
 #overlay-background {
  position: absolute;
+ font-family: 'Helvetica Neue', sans-serif;
  top: 0;
  left: 0;
  width: 100%;
