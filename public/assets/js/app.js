@@ -14,10 +14,10 @@ $(function () {
       // save the Tweet so that the very latest Tweet is available and can be published
       cachedTweet = tweet
       console.log('cached Tweet = ', cachedTweet)
-      var html = '<div class="row"><div class="col-md-6 col-md-offset-3 tweet"><img src="' + tweet.user_profile_image + '" class="avatar pull-left"/><div class="names"><span class="full-name">' + tweet.name + ' </span><span class="username">@' +tweet.screen_name + '</span></div><div class="contents"><span class="text">' + tweet.text + '</span></div><span class="coordinates"> Location:' + tweet.location.lat + ', ' + tweet.location.lng + '</span></div></div>';
+      var html = '<div class="row"><div class="col-md-11 col-md-offset-1 tweet"><img src="' + tweet.user_profile_image + '" class="avatar pull-left"/><div class="names"><span class="full-name">' + tweet.name + ' </span><span class="username">@' +tweet.screen_name + '</span></div><div class="contents"><span class="text">' + tweet.text + '</span></div><span class="coordinates"> Location:' + tweet.location.lat + ', ' + tweet.location.lng + '</span></div></div><br> ';
       counter ++;
       $('#tweet-container').prepend(html);
-      if (counter > 10) {
+      if (counter > 8) {
       $('#tweet-container .tweet').last().remove()
       }
 
