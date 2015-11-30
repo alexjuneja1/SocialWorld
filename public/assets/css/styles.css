@@ -44,6 +44,11 @@ body {
   padding: 35px;
 }
 
+.text img {
+  width: 16px;
+  height: 16px;
+}
+
 .ui.input input:focus, .ui.input.focus input {
     border-color: black;
     background: white;

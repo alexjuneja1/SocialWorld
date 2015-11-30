@@ -8,12 +8,14 @@
 	POS_Z = 2000,
 	FOV = 45,
 	NEAR = 1,
-	FAR = 150000,
+	FAR = 100000,
 	PI_HALF = Math.PI / 2;
 
 	var renderer, container, camera, scene, pubnub, innerWidth, innerHeight;
 
   //Google Globe Variables
+	var overRenderer;
+
   var curZoomSpeed = 0;
   var zoomSpeed = 50;
 
@@ -22,6 +24,7 @@
       target = { x: Math.PI*3/2, y: Math.PI / 6.0 },
       targetOnDown = { x: 0, y: 0 };
   var distance = 100000, distanceTarget = 100000;
+
 	/**
 	 *	Initiates WebGL view with Three.js
 	 */
