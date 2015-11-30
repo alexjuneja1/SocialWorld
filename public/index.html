@@ -20,11 +20,17 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
   </head>
   <body>
+
     <div class="navbar-container">
-      <div class="ui secondary  menu" id="navbar">
-        <a class="item" id="brand" href="/">
+      <div class="ui secondary menu" id="navbar">
+        <div class="dropdown">
+        <a class="item dropdown-toggle" id="brand" data-toggle="dropdown">
           social world
         </a>
+          <ul class="dropdown-menu">
+            <li><a href="/login" class="ui item" id="login">login</a></li>
+          </ul>
+        </div>
         <div class="menu right floated">
           <div class="item">
             <a class="ui item" id="searchicon">
@@ -38,13 +44,13 @@
           </div>
         </div>
         <div class="right menu">
-          <a href="/login" class="ui item" id="login">login</a>
           <a class="ui item" id="twittericon">
             <img src = "http://www.kirkcosiermusic.com/wp-content/uploads/2015/05/twitter3.png">
           </a>
         </div>
       </div>
     </div>
+
     <div id="body-container">
       <!-- <div class="overlay" id="overlays-container">
         <div class="overlay overlay-element" id="login-container"></div>
