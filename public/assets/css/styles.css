@@ -27,6 +27,7 @@ body {
 
 #searchbar{
   margin-right: 130px;
+  color:white;
 }
 
 .navbar-container {
@@ -82,6 +83,11 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
   color: white;
 }
 
+#search-term {
+  background-color: rgba(255, 255, 255, 0.2);
+  color:white;
+}
+
 #brand {
   color: white;
   font-size: 40px;
@@ -94,7 +100,7 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
 
 
 #login {
-  color: black;
+  color: white;
   font-size: 25px;
   letter-spacing: -1px;
   line-height: 1;
