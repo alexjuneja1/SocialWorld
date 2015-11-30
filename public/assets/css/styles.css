@@ -10,11 +10,11 @@ body {
 
 #globe-container {
   position: absolute;
-  top: 0;
   left: 0;
   z-index: 0;
   padding-right: 0;
   padding-left: 0;
+  top: 70px;
 }
 
 #stats {
@@ -38,12 +38,11 @@ body {
 #tweet-container {
   display: none;
   position: absolute;
-  top: 0;
   bottom: 0;
   left: 0;
   right: 0;
   z-index: 1;
-  padding: 35px;
+  top: 140px;
 }
 
 .text img {
@@ -170,7 +169,7 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
  transform: translateY(-50%);*/
 }
 
-#overlay-background {
+/*#overlay-background {
  position: absolute;
  top: 0;
  left: 0;
@@ -178,4 +177,4 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
  height: 100%;
  z-index: 10;
  background-color: rgba(0,0,0,0.5);
-}*/
+/*}*/
