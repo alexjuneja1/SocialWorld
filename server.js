@@ -118,6 +118,7 @@ io.on('connect', function(socket){
 					      data.text = tweet.text
 					      data.user_profile_image = tweet.user.profile_image_url
 								data.location = {"lat": tweet.place.bounding_box.coordinates[0][0][1],"lng": tweet.place.bounding_box.coordinates[0][0][0]}
+								data.full_name = tweet.place.full_name
 								console.log(data)
 								socket.emit('tweets', data)
 				} else if (tweet.coordinates && tweet.coordinates.coordinates){

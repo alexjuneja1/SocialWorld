@@ -3,61 +3,97 @@ body {
   background-color: black;
 }
 
+h1 {
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+h2 {
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+p {
+    font-family: 'Helvetica Neue', sans-serif;
+}
+
+#stats {
+  display: none;
+}
+
+#twittericon{
+  margin-right: 100px;
+}
+
+#searchbar{
+  margin-right: 130px;
+}
+
 .navbar-container {
   background-color: black;
   position: relative;
   padding-top: 5px;
 }
 
+#tweet-container {
+  padding-top: 30px;
+  display: none;
+}
+
 
 #searchbar {
-  opacity: 0.6;
-  border: 3px solid #4195fc; /* some kind of blue border */
+  opacity: 0.9;
+  color: white;
 
    /* other CSS styles */
 
    /* round the corners */
    -webkit-border-radius: 6px;
       -moz-border-radius: 6px;
-           border-radius: 6px;
+           border-radius: 6px
 
+}
 
-   /* make it glow! */
-   -webkit-box-shadow: 0px 0px 6px #4195fc;
-      -moz-box-shadow: 0px 0px 6px #4195fc;
-           box-shadow: 0px 0px 6px #4195fc;
-
+#search {
+  color: white;
 }
 
 #brand {
   color: white;
-  font-size: 40px;
+  font-size: 50px;
+  font-family: 'Helvetica Neue', sans-serif;
+  font-weight: bold;
+  letter-spacing: -1px;
+  line-height: 1;
+  text-align: center
 }
 
 #login {
   color: white;
-  font-size: 40px;
+  font-size: 30px;
+  font-family: 'Helvetica Neue', sans-serif;
+  letter-spacing: -1px;
+  line-height: 1;
+  text-align: center
 }
 
 #login:hover {
   color: gray;
 }
 
-#signup {
-  color: white;
-  font-size: 40px;
+.loginpage {
+  margin-top: 200px;
 }
 
-#signup:hover {
-  color: gray;
+.signup {
+  margin-top: 150px
 }
 
-#globe-container {
+
+/*#globe-container {
   margin-left: auto;
   margin-right: auto;
   margin-bottom: auto;
   margin-top: 0px
-}
+}*/
 
 .navbar {
   opacity: 0.4;
@@ -86,6 +122,7 @@ body {
  border-color: #4ECDC4 ;
  border-radius: 15px;
  z-index: 11;
+ font-family: 'Helvetica Neue', sans-serif;
  overflow: auto;
 }
 
@@ -93,11 +130,13 @@ body {
  position: relative;
  padding-right: 200px;
  top: 40%;
+ font-family: 'Helvetica Neue', sans-serif;
  transform: translateY(-50%);*/
 }
 
 #overlay-background {
  position: absolute;
+ font-family: 'Helvetica Neue', sans-serif;
  top: 0;
  left: 0;
  width: 100%;

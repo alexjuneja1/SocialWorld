@@ -24,24 +24,26 @@
 <div class="navbar-container">
   <div class="ui secondary  menu" id="navbar">
     <a class="item" id="brand" href="#">
-      Social World
+      social world
     </a>
     <div class="menu right floated">
       <div class="item">
         <div class="ui icon input" id="searchbar">
           <form action="/" name="search" id="search">
-            <input type="text" class="form-control" id="search-term" placeholder="Search with a hashtag">
+            <input type="text" class="form-control" id="search-term" placeholder="Search for a hashtag">
           </form>
         </div>
       </div>
     </div>
     <div class="right menu">
-      <a class="ui item" id="login">
-        Login
+      <a href="/login" class="ui item" id="login">login</a>
+      <a class="ui item" id="twittericon">
+        <img src = "http://www.kirkcosiermusic.com/wp-content/uploads/2015/05/twitter3.png">
       </a>
     </div>
   </div>
 </div>
+
 
   <div class="overlay" id="overlays-container">
 
@@ -53,31 +55,23 @@
 
   <script type="text/javascript">
 
-  $('#login').on('click', function(evt){
-  $.ajax({
-    url: '/login'
-    ,method: 'GET'
-    ,success: function(data){
-      console.log('loginpage' + data)
-      $('#login-container').html(data)
-      $('#overlays-container').toggle()
-      $('#login-container').toggle()
-      }
-    })
-})
+//   $('#login').on('click', function(evt){
+//   $.ajax({
+//     url: '/login'
+//     ,method: 'GET'
+//     ,success: function(data){
+//       console.log('loginpage')
+// //       $('#login-container').html(data)
+// //       $('#overlays-container').toggle()
+// //       $('#login-container').toggle()
+//       }
+//     })
+// })
 
-  $('#signup').on('click', function(evt){
-  $.ajax({
-    url: '/signup'
-    ,method: 'GET'
-    ,success: function(data){
-      console.log('loginpage' + data)
-      $('#signup-container').html(data)
-      $('#overlays-container').toggle()
-      $('#signup-container').toggle()
-      }
-    })
-  })
+  $("img").click(function(){
+    $("#tweet-container").toggle("slide");
+    $('#stats').toggle()
+});
 
   // if (user) {
   //   $('#login').html(user.username)
@@ -85,14 +79,11 @@
 
   </script>
 
-  <div id="globe-container"></div><br>
-
   <div class="ui grid">
-    <div class="four wide column"></div>
-    <div class="four wide column"></div>
-    <div class="four wide column"></div>
-    <div class="four wide column"><div id="tweet-container"></div></div>
+    <div class="col-sm-8" id="globe-container"></div>
+    <div class="col-sm-4" id="tweet-container"></div>
   </div>
+
 
 
   <!-- Container for the Angular application -->
