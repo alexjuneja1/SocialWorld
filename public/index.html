@@ -30,21 +30,20 @@
       <div class="item">
         <div class="ui icon input" id="searchbar">
           <form action="/" name="search" id="search">
-            <input type="text" class="form-control" id="search-term" placeholder="Search with a hashtag">
+            <input type="text" class="form-control" id="search-term" placeholder="Search for a hashtag">
           </form>
         </div>
       </div>
     </div>
     <div class="right menu">
-      <a class="ui item" id="login">
-        login
-      </a>
-      <a class="ui item" id="showhide">
-        <button> Show/Hide </button>
+      <a href="/login" class="ui item" id="login">login</a>
+      <a class="ui item" id="twittericon">
+        <img src = "http://www.kirkcosiermusic.com/wp-content/uploads/2015/05/twitter3.png">
       </a>
     </div>
   </div>
 </div>
+
 
   <div class="overlay" id="overlays-container">
 
@@ -56,20 +55,20 @@
 
   <script type="text/javascript">
 
-  $('#login').on('click', function(evt){
-  $.ajax({
-    url: '/login'
-    ,method: 'GET'
-    ,success: function(data){
-      console.log('loginpage' + data)
-      $('#login-container').html(data)
-      $('#overlays-container').toggle()
-      $('#login-container').toggle()
-      }
-    })
-})
+//   $('#login').on('click', function(evt){
+//   $.ajax({
+//     url: '/login'
+//     ,method: 'GET'
+//     ,success: function(data){
+//       console.log('loginpage')
+// //       $('#login-container').html(data)
+// //       $('#overlays-container').toggle()
+// //       $('#login-container').toggle()
+//       }
+//     })
+// })
 
-  $("button").click(function(){
+  $("img").click(function(){
     $("#tweet-container").toggle("slide");
     $('#stats').toggle()
 });
