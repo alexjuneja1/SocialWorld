@@ -79,6 +79,14 @@ p {
   color: gray;
 }
 
+.loginpage {
+  margin-top: 200px;
+}
+
+.signup {
+  margin-top: 150px
+}
+
 
 /*#globe-container {
   margin-left: auto;

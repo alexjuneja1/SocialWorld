@@ -36,9 +36,7 @@
       </div>
     </div>
     <div class="right menu">
-      <a class="ui item" id="login">
-        login
-      </a>
+      <a href="/login" class="ui item" id="login">login</a>
       <a class="ui item" id="twittericon">
         <img src = "http://www.kirkcosiermusic.com/wp-content/uploads/2015/05/twitter3.png">
       </a>
@@ -57,18 +55,18 @@
 
   <script type="text/javascript">
 
-  $('#login').on('click', function(evt){
-  $.ajax({
-    url: '/login'
-    ,method: 'GET'
-    ,success: function(data){
-      console.log('loginpage' + data)
-      $('#login-container').html(data)
-      $('#overlays-container').toggle()
-      $('#login-container').toggle()
-      }
-    })
-})
+//   $('#login').on('click', function(evt){
+//   $.ajax({
+//     url: '/login'
+//     ,method: 'GET'
+//     ,success: function(data){
+//       console.log('loginpage')
+// //       $('#login-container').html(data)
+// //       $('#overlays-container').toggle()
+// //       $('#login-container').toggle()
+//       }
+//     })
+// })
 
   $("img").click(function(){
     $("#tweet-container").toggle("slide");
