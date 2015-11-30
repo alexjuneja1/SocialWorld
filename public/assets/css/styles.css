@@ -2,19 +2,7 @@ body {
   color: white;
   background-color: black;
   font-family: 'Roboto', sans-serif;
-}
-
-h1 {
-}
-
-h2 {
-}
-
-p {
-}
-
-a {
-}
+ }
 
 #body-container {
   position: relative;
@@ -53,21 +41,35 @@ a {
   left: 0;
   right: 0;
   z-index: 1;
-  padding: 20px;
+  padding: 35px;
 }
 
+.ui.input input:focus, .ui.input.focus input {
+    border-color: black;
+    background: white;
+    font-family: 'Lucidatypewriter', monospace;
+    font-size: 20px;
+}
 
-#searchbar {
-  opacity: 0.9;
-  color: white;
+.ui.input input{
+    border-color: black;
+    background: white;
+    color: black;
+    font-family: 'Lucidatypewriter', monospace;
+    font-size: 20px;
+}
 
-   /* other CSS styles */
+.ui.menu .item>.input input {
+  font-size: 20px;
+}
 
-   /* round the corners */
-   -webkit-border-radius: 6px;
-      -moz-border-radius: 6px;
-           border-radius: 6px
+input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
+  background: white;
+  color: black
+}
 
+.item {
+  margin-left: 70px
 }
 
 #search {
@@ -76,19 +78,23 @@ a {
 
 #brand {
   color: white;
-  font-size: 30px;
+  font-size: 40px;
   font-weight: bold;
   letter-spacing: -1px;
   line-height: 1;
-  text-align: center
+  text-align: center;
+  font-family: 'Lucidatypewriter', monospace;
 }
+
 
 #login {
   color: white;
-  font-size: 30px;
+  font-size: 25px;
   letter-spacing: -1px;
   line-height: 1;
-  text-align: center
+  text-align: center;
+  font-family: 'Lucidatypewriter', monospace;
+  /*font-family: 'Andale Mono', monospace;*/
 }
 
 #login:hover {
@@ -96,11 +102,20 @@ a {
 }
 
 .loginpage {
-  margin-top: 200px;
+  margin-top: 15%;
 }
 
 .signup {
-  margin-top: 150px
+  margin-top: 15%;
+}
+
+.profile {
+  margin-top: 20%;
+}
+
+#logout{
+  margin-top: 10px;
+  margin-left: 90%;
 }
 
 
@@ -121,7 +136,7 @@ a {
   text-align: center;
 }
 
-.overlay{
+/*.overlay{
  display:none;
 }
 
@@ -156,4 +171,4 @@ a {
  height: 100%;
  z-index: 10;
  background-color: rgba(0,0,0,0.5);
-}
+}*/

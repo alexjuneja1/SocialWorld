@@ -17,7 +17,7 @@ $(function () {
       var html = '<div class="row"><div class="col-md-11 col-md-offset-1 tweet"><img src="' + tweet.user_profile_image + '" class="avatar pull-left"/><div class="names"><span class="full-name">' + tweet.name + ' </span><span class="username">@' +tweet.screen_name + '</span></div><div class="contents"><span class="text">' + tweet.text + '</span></div><span class="coordinates"> Location: ' + tweet.full_name + '</span></div></div><br> ';
       counter ++;
       $('#tweet-container').prepend(html);
-      if (counter > 7) {
+      if (counter > 6) {
       $('#tweet-container .tweet').last().remove()
       }
 
