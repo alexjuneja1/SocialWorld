@@ -1,4 +1,4 @@
-<u><font size="20"><b>Social World by Linc</b></font></u>
+#Social World by Linc
 
 Ever had a great thought and wish you knew other people who felt the same? Well wish no more! Social World allows user to find each other or find out how trendy their hashtags are by visually seeing it across the globe!
 
@@ -30,7 +30,8 @@ As far as backlog is currently concerned:
   + A way to display a user's profile to another user.
   + A method of storing searchs per user.
 
-<u><b>Using the App</b></u><br>
+#__Using the App__
+
 Using Social World is easy! Simply type in a hashtag or keyword into the search bar and you're on your way.
 
 ![Screenshot](http://i.imgur.com/g7RUsmP.png)
