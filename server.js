@@ -21,8 +21,10 @@ var port = process.env.PORT || 8000
 //user routes
 var userRoutes = require('./routes/user_routes.js')
 
+var db = 'mongodb://admin:admin@ds057954.mongolab.com:57954/socialworld'
+
 // connect to database
-mongoose.connect('mongodb://localhost/socialworld', function(err){
+mongoose.connect(db, function(err){
 	if(err) return console.log('Database connection error')
 	console.log('Connected to MongoDB. You are in the matrix!')
 })

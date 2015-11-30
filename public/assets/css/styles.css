@@ -1,18 +1,30 @@
 body {
   color: white;
   background-color: black;
+  font-family: 'Roboto', sans-serif;
 }
 
 h1 {
-    font-family: 'Helvetica Neue', sans-serif;
 }
 
 h2 {
-    font-family: 'Helvetica Neue', sans-serif;
 }
 
 p {
-    font-family: 'Helvetica Neue', sans-serif;
+}
+
+a {
+}
+
+#body-container {
+  position: relative;
+}
+
+#globe-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
 }
 
 #stats {
@@ -34,8 +46,14 @@ p {
 }
 
 #tweet-container {
-  padding-top: 30px;
   display: none;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  padding: 20px;
 }
 
 
@@ -58,8 +76,7 @@ p {
 
 #brand {
   color: white;
-  font-size: 50px;
-  font-family: 'Helvetica Neue', sans-serif;
+  font-size: 30px;
   font-weight: bold;
   letter-spacing: -1px;
   line-height: 1;
@@ -69,7 +86,6 @@ p {
 #login {
   color: white;
   font-size: 30px;
-  font-family: 'Helvetica Neue', sans-serif;
   letter-spacing: -1px;
   line-height: 1;
   text-align: center
@@ -122,7 +138,6 @@ p {
  border-color: #4ECDC4 ;
  border-radius: 15px;
  z-index: 11;
- font-family: 'Helvetica Neue', sans-serif;
  overflow: auto;
 }
 
@@ -130,13 +145,11 @@ p {
  position: relative;
  padding-right: 200px;
  top: 40%;
- font-family: 'Helvetica Neue', sans-serif;
  transform: translateY(-50%);*/
 }
 
 #overlay-background {
  position: absolute;
- font-family: 'Helvetica Neue', sans-serif;
  top: 0;
  left: 0;
  width: 100%;
