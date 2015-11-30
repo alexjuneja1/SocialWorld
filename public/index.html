@@ -14,14 +14,39 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.6/semantic.min.js"></script>
       <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
       <script src="//cdnjs.cloudflare.com/ajax/libs/stats.js/r11/Stats.js"></script>
-      <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.18/angular.min.js"></script>
-      <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.18/angular-resource.min.js"></script>
       <script type="text/javascript" src="/socket.io/socket.io.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+      <script src="//twemoji.maxcdn.com/twemoji.min.js"></script>
   </head>
   <body>
+    <div id="body-container">
+      <div class="navbar-container">
+        <div class="ui secondary  menu" id="navbar">
+          <a class="item" id="brand" href="/">
+            social world
+          </a>
+          <div class="menu right floated">
+            <div class="item">
+              <a class="ui item" id="searchicon">
+                <img src = "https://cdn1.iconfinder.com/data/icons/hawcons/32/698627-icon-111-search-128.png">
+              </a>
+              <div class="ui icon input" id="searchbar">
+                <form action="/" name="search" id="search">
+                  <input type="text" class="form-control" id="search-term" placeholder="Search for a hashtag">
+                </form>
+              </div>
+            </div>
+          </div>
+          <div class="right menu">
+            <a href="/login" class="ui item" id="login">login</a>
+            <a class="ui item" id="twittericon">
+              <img src = "http://www.kirkcosiermusic.com/wp-content/uploads/2015/05/twitter3.png">
+            </a>
+          </div>
+        </div>
+      </div>
 
-    <div class="navbar-container">
+    <!-- <div class="navbar-container">
       <div class="ui secondary menu" id="navbar">
         <div class="dropdown">
         <a class="item dropdown-toggle" id="brand" data-toggle="dropdown">
@@ -39,8 +64,8 @@
             <div class="ui icon input" id="searchbar">
               <form action="/" name="search" id="search">
                 <input type="text" class="form-control" id="search-term" placeholder="Search for a hashtag">
-              </form>
-            </div>
+              </form> -->
+            <!-- </div>
           </div>
         </div>
         <div class="right menu">
@@ -49,16 +74,17 @@
           </a>
         </div>
       </div>
-    </div>
+    </div> -->
 
-    <div id="body-container">
+    <!-- <div id="body-container"> -->
       <!-- <div class="overlay" id="overlays-container">
         <div class="overlay overlay-element" id="login-container"></div>
         <div class="overlay overlay-element" id="signup-container"></div>
       </div> -->
       <div class="col-xs-12" id="globe-container"></div>
-      <div class="col-xs-3" id="tweet-container"></div>
+      <div class="col-xs-6 col-md-3" id="tweet-container"></div>
     </div>
+
     <script type="text/javascript">
       //   $('#login').on('click', function(evt){
       //   $.ajax({
@@ -95,8 +121,6 @@
     <script src="assets/js/shaders.js"></script>
     <script src="assets/js/TweetBeacon.js"></script>
     <script src="assets/js/TwitterStreamGlobe.js"></script>
-    <script src="assets/js/TweetHud.js"></script>
-
     <!-- Our app -->
     <script src="assets/js/app.js"></script>
   </body>

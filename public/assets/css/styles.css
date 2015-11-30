@@ -13,6 +13,8 @@ body {
   top: 0;
   left: 0;
   z-index: 0;
+  padding-right: 0;
+  padding-left: 0;
 }
 
 #stats {
@@ -28,9 +30,9 @@ body {
 }
 
 .navbar-container {
-  background-color: black;
   position: relative;
   padding-top: 5px;
+  z-index: 1;
 }
 
 #tweet-container {
@@ -42,6 +44,11 @@ body {
   right: 0;
   z-index: 1;
   padding: 35px;
+}
+
+.text img {
+  width: 16px;
+  height: 16px;
 }
 
 .ui.input input:focus, .ui.input.focus input {
