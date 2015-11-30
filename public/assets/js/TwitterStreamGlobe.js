@@ -74,7 +74,6 @@
     }, false);
   }
 
-
 	var earthMesh, beaconHolder;
 
 	/**
