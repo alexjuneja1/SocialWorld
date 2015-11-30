@@ -30,7 +30,7 @@
       <div class="item">
         <div class="ui icon input" id="searchbar">
           <form action="/" name="search" id="search">
-            <input type="text" class="form-control" id="search-term" placeholder="Search with a hashtag">
+            <input type="text" class="form-control" id="search-term" placeholder="Search for a hashtag">
           </form>
         </div>
       </div>
@@ -39,12 +39,13 @@
       <a class="ui item" id="login">
         login
       </a>
-      <a class="ui item" id="showhide">
-        <button> Show/Hide </button>
+      <a class="ui item" id="twittericon">
+        <img src = "http://www.kirkcosiermusic.com/wp-content/uploads/2015/05/twitter3.png">
       </a>
     </div>
   </div>
 </div>
+
 
   <div class="overlay" id="overlays-container">
 
@@ -69,7 +70,7 @@
     })
 })
 
-  $("button").click(function(){
+  $("img").click(function(){
     $("#tweet-container").toggle("slide");
     $('#stats').toggle()
 });
