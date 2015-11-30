@@ -1,111 +1,94 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>Social World</title>
-    <!-- move to assets->js folder -->
-    <!-- css files -->
-    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
-    <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
-    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.6/semantic.min.css">
-    <link rel="stylesheet" href="assets/css/styles.css">
-    <!-- js files -->
-    <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
-    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.6/semantic.min.js"></script>
-    <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/stats.js/r11/Stats.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.18/angular.min.js"></script>
-    <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.18/angular-resource.min.js"></script>
-    <script type="text/javascript" src="/socket.io/socket.io.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
-</head>
-<body>
-
-<div class="navbar-container">
-  <div class="ui secondary  menu" id="navbar">
-    <a class="item" id="brand" href="#">
-      social world
-    </a>
-    <div class="menu right floated">
-      <div class="item">
-        <div class="ui icon input" id="searchbar">
-          <form action="/" name="search" id="search">
-            <input type="text" class="form-control" id="search-term" placeholder="Search for a hashtag">
-          </form>
+  <head>
+      <title>Social World</title>
+      <!-- css files -->
+      <link href='https://fonts.googleapis.com/css?family=Roboto:400,300,100,500,700,900,300italic' rel='stylesheet' type='text/css'>
+      <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
+      <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
+      <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.6/semantic.min.css">
+      <link rel="stylesheet" href="assets/css/styles.css">
+      <!-- js files -->
+      <script type="text/javascript" src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+      <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/jquery-ui.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.1.6/semantic.min.js"></script>
+      <script type="text/javascript" src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/stats.js/r11/Stats.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.18/angular.min.js"></script>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/angular.js/1.2.18/angular-resource.min.js"></script>
+      <script type="text/javascript" src="/socket.io/socket.io.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.18.0/TweenMax.min.js"></script>
+  </head>
+  <body>
+    <div class="navbar-container">
+      <div class="ui secondary  menu" id="navbar">
+        <a class="item" id="brand" href="/">
+          Social World
+        </a>
+        <div class="menu right floated">
+          <div class="item">
+            <div class="ui icon input" id="searchbar">
+              <form action="/" name="search" id="search">
+                <input type="text" class="form-control" id="search-term" placeholder="Search for a hashtag">
+              </form>
+            </div>
+          </div>
+        </div>
+        <div class="right menu">
+          <a href="/login" class="ui item" id="login">Login</a>
+          <a class="ui item" id="twittericon">
+            <img src = "http://www.kirkcosiermusic.com/wp-content/uploads/2015/05/twitter3.png">
+          </a>
         </div>
       </div>
     </div>
-    <div class="right menu">
-      <a href="/login" class="ui item" id="login">login</a>
-      <a class="ui item" id="twittericon">
-        <img src = "http://www.kirkcosiermusic.com/wp-content/uploads/2015/05/twitter3.png">
-      </a>
+    <div id="body-container">
+      <div class="overlay" id="overlays-container">
+        <div class="overlay overlay-element" id="login-container"></div>
+        <div class="overlay overlay-element" id="signup-container"></div>
+      </div>
+      <div class="col-xs-12" id="globe-container"></div>
+      <div class="col-xs-3" id="tweet-container"></div>
     </div>
-  </div>
-</div>
+    <script type="text/javascript">
+      //   $('#login').on('click', function(evt){
+      //   $.ajax({
+      //     url: '/login'
+      //     ,method: 'GET'
+      //     ,success: function(data){
+      //       console.log('loginpage')
+      // //       $('#login-container').html(data)
+      // //       $('#overlays-container').toggle()
+      // //       $('#login-container').toggle()
+      //       }
+      //     })
+      // })
 
+      $("img").click(function(){
+        $("#tweet-container").toggle("slide");
+        $('#stats').toggle()
+      });
 
-  <div class="overlay" id="overlays-container">
+      // if (user) {
+      //   $('#login').html(user.username)
+      // }
+    </script>
 
-    <div class="overlay overlay-element" id="login-container"></div>
+    <!-- Globe Dependencies -->
+    <script src="assets/js/Detector.js"></script>
+    <script src="assets/js/three.min.js"></script>
+    <script src="assets/js/Tween.js"></script>
 
-    <div class="overlay overlay-element" id="signup-container"></div>
+    <!-- Google Globe JS -->
+    <!-- <script src="assets/js/globe.js"></script> -->
 
-  </div>
+    <!-- Twitter Globe JS -->
+    <script src="assets/js/shaders.js"></script>
+    <script src="assets/js/TweetBeacon.js"></script>
+    <script src="assets/js/TwitterStreamGlobe.js"></script>
+    <script src="assets/js/TweetHud.js"></script>
 
-  <script type="text/javascript">
-
-//   $('#login').on('click', function(evt){
-//   $.ajax({
-//     url: '/login'
-//     ,method: 'GET'
-//     ,success: function(data){
-//       console.log('loginpage')
-// //       $('#login-container').html(data)
-// //       $('#overlays-container').toggle()
-// //       $('#login-container').toggle()
-//       }
-//     })
-// })
-
-  $("img").click(function(){
-    $("#tweet-container").toggle("slide");
-    $('#stats').toggle()
-});
-
-  // if (user) {
-  //   $('#login').html(user.username)
-  // }
-
-  </script>
-
-  <div class="ui grid">
-    <div class="col-sm-8" id="globe-container"></div>
-    <div class="col-sm-4" id="tweet-container"></div>
-  </div>
-
-
-
-  <!-- Container for the Angular application -->
-  <div id="tweet-hud" ng-controller="TweetHud">
-
-
-  <!-- Globe Dependencies -->
-  <script src="assets/js/Detector.js"></script>
-  <script src="assets/js/three.min.js"></script>
-  <script src="assets/js/Tween.js"></script>
-
-  <!-- Google Globe JS -->
-  <!-- <script src="assets/js/globe.js"></script> -->
-
-  <!-- Twitter Globe JS -->
-  <script src="assets/js/shaders.js"></script>
-  <script src="assets/js/TweetBeacon.js"></script>
-  <script src="assets/js/TwitterStreamGlobe.js"></script>
-  <script src="assets/js/TweetHud.js"></script>
-
-  <!-- Our app -->
-  <script src="assets/js/app.js"></script>
-
-</body>
+    <!-- Our app -->
+    <script src="assets/js/app.js"></script>
+  </body>
 </html>
