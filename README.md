@@ -30,7 +30,7 @@ As far as backlog is currently concerned:
   + A way to display a user's profile to another user.
   + A method of storing searchs per user.
 
-<u><b>Using the App</b></u>
+<u><b>Using the App</b></u><br>
 Using Social World is easy! Simply type in a hashtag or keyword into the search bar and you're on your way.
 
 ![Screenshot](http://i.imgur.com/g7RUsmP.png)
