@@ -110,15 +110,14 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
 
 h5 {
   color: white;
-  font-size: 20px;
+  font-size: 1em;
 }
 
 .text {
-  margin-left: 65%;
+  margin-left: 75%;
   margin-top: -25px;
   margin-right: 2%;
-  opacity: 0.7;
-  font-size: 2px;
+  /*opacity: 0.7;*/
 }
 
 #login {
