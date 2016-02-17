@@ -21,13 +21,18 @@ body {
   display: none;
 }
 
-#twittericon{
-  margin-right: 100px;
+#searchbar{
+  padding-right: 10%;
+  color:white;
 }
 
-#searchbar{
-  margin-right: 130px;
-  color:white;
+img#twittericon{
+  margin-top: 20px;
+  margin-left: 30px
+}
+
+a#brand {
+  margin-left: -20px;
 }
 
 .navbar-container {
@@ -75,12 +80,16 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
   color: black
 }
 
-.item {
-  margin-left: 70px
-}
-
 #search {
   color: white;
+}
+
+.item {
+  margin-left: 20%
+}
+
+.searchbar {
+  padding-right: 0%
 }
 
 #search-term {
