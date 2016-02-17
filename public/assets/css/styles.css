@@ -111,13 +111,13 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
 h5 {
   color: white;
   font-size: 1em;
+  font-weight: 100;
 }
 
 .text {
-  margin-left: 75%;
-  margin-top: -25px;
-  margin-right: 2%;
-  /*opacity: 0.7;*/
+  margin-top: -40px;
+  opacity: 0.7;
+  z-index: 3
 }
 
 #login {
@@ -168,40 +168,3 @@ h5 {
 	width: 200px;
   text-align: center;
 }
-
-/*.overlay{
- display:none;
-}
-
-#overlays-container {
- position: fixed;
- text-align: center;
- width: 80%;
- height: 90%;
- top: 5%;
- left: 8%;
- background-color: rgba(0, 0, 0, .8);;
- border-style: solid;
- border-width: 5px;
- border-color: #4ECDC4 ;
- border-radius: 15px;
- z-index: 11;
- overflow: auto;
-}
-
-.overlay-element {
- position: relative;
- padding-right: 200px;
- top: 40%;
- transform: translateY(-50%);*/
-}
-
-/*#overlay-background {
- position: absolute;
- top: 0;
- left: 0;
- width: 100%;
- height: 100%;
- z-index: 10;
- background-color: rgba(0,0,0,0.5);
-/*}*/
