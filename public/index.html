@@ -33,15 +33,18 @@
               </a>
               <div class="ui icon input" id="searchbar">
                 <form action="/" name="search" id="search">
-                  <input type="text" class="form-control" id="search-term" placeholder="Love">
+                  <input type="text" class="form-control" id="search-term" placeholder="Search a hashtag press enter">
                 </form>
               </div>
             </div>
           </div>
         </div>
+        <div class="text">
+          <h5> Only 6% of users opt-in to allow Twitter to use their location. To see Social World at high performance, search the hastag "love"</h5>
+        </div>
       </div>
 
-      <div class="text"
+
 
       <div class="col-xs-12" id="globe-container"></div>
       <div class="col-xs-6 col-md-3" id="tweet-container"></div>
@@ -49,9 +52,8 @@
 
     <script type="text/javascript">
 
-      $("img").click(function(){
+      $("img#twittericon").click(function(){
         $("#tweet-container").toggle("slide");
-        $('#stats').toggle()
       });
 
     </script>
