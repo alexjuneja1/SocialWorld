@@ -22,91 +22,39 @@
     <div id="body-container">
       <div class="navbar-container">
         <div class="ui secondary  menu" id="navbar">
+          <img id="twittericon" src="http://www.kirkcosiermusic.com/wp-content/uploads/2015/05/twitter3.png" height="50">
           <a class="item" id="brand" href="/">
             social world
           </a>
-          <div class="menu right floated">
+          <div class="right menu">
             <div class="item">
               <a class="ui item" id="searchicon">
                 <img src = "https://cdn1.iconfinder.com/data/icons/hawcons/32/698627-icon-111-search-128.png">
               </a>
               <div class="ui icon input" id="searchbar">
                 <form action="/" name="search" id="search">
-                  <input type="text" class="form-control" id="search-term" placeholder="Search for a hashtag">
+                  <input type="text" class="form-control" id="search-term" placeholder="Search a hashtag press enter">
                 </form>
               </div>
             </div>
+            <div class="item"></div>
           </div>
-          <div class="right menu">
-            <a href="/login" class="ui item" id="login">login</a>
-            <a class="ui item" id="twittericon">
-              <img src = "http://www.kirkcosiermusic.com/wp-content/uploads/2015/05/twitter3.png">
-            </a>
-          </div>
+        </div>
+        <div class="text">
+          <h5> *Only about 6% of users opt-in to allow Twitter to broadcast their location with every tweet. To see Social World at high performance, search the hastag "love". To view the tweets, click the twitter bird icon.</h5>
         </div>
       </div>
 
-    <!-- <div class="navbar-container">
-      <div class="ui secondary menu" id="navbar">
-        <div class="dropdown">
-        <a class="item dropdown-toggle" id="brand" data-toggle="dropdown">
-          social world
-        </a>
-          <ul class="dropdown-menu">
-            <li><a href="/login" class="ui item" id="login">login</a></li>
-          </ul>
-        </div>
-        <div class="menu right floated">
-          <div class="item">
-            <a class="ui item" id="searchicon">
-              <img src = "https://cdn1.iconfinder.com/data/icons/hawcons/32/698627-icon-111-search-128.png">
-            </a>
-            <div class="ui icon input" id="searchbar">
-              <form action="/" name="search" id="search">
-                <input type="text" class="form-control" id="search-term" placeholder="Search for a hashtag">
-              </form> -->
-            <!-- </div>
-          </div>
-        </div>
-        <div class="right menu">
-          <a class="ui item" id="twittericon">
-            <img src = "http://www.kirkcosiermusic.com/wp-content/uploads/2015/05/twitter3.png">
-          </a>
-        </div>
-      </div>
-    </div> -->
-
-    <!-- <div id="body-container"> -->
-      <!-- <div class="overlay" id="overlays-container">
-        <div class="overlay overlay-element" id="login-container"></div>
-        <div class="overlay overlay-element" id="signup-container"></div>
-      </div> -->
       <div class="col-xs-12" id="globe-container"></div>
       <div class="col-xs-6 col-md-3" id="tweet-container"></div>
     </div>
 
     <script type="text/javascript">
-      //   $('#login').on('click', function(evt){
-      //   $.ajax({
-      //     url: '/login'
-      //     ,method: 'GET'
-      //     ,success: function(data){
-      //       console.log('loginpage')
-      // //       $('#login-container').html(data)
-      // //       $('#overlays-container').toggle()
-      // //       $('#login-container').toggle()
-      //       }
-      //     })
-      // })
 
-      $("img").click(function(){
+      $("img#twittericon").click(function(){
         $("#tweet-container").toggle("slide");
-        $('#stats').toggle()
       });
 
-      // if (user) {
-      //   $('#login').html(user.username)
-      // }
     </script>
 
     <!-- Globe Dependencies -->

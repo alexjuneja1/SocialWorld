@@ -21,13 +21,18 @@ body {
   display: none;
 }
 
-#twittericon{
-  margin-right: 100px;
+#searchbar{
+  padding-right: 10%;
+  color:white;
 }
 
-#searchbar{
-  margin-right: 130px;
-  color:white;
+img#twittericon{
+  margin-top: 20px;
+  margin-left: 30px
+}
+
+a#brand {
+  margin-left: -20px;
 }
 
 .navbar-container {
@@ -43,7 +48,7 @@ body {
   left: 0;
   right: 0;
   z-index: 1;
-  top: 140px;
+  top: 160px;
 }
 
 .text img {
@@ -75,17 +80,22 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
   color: black
 }
 
-.item {
-  margin-left: 70px
-}
-
 #search {
   color: white;
+}
+
+.item {
+  margin-left: 20%
+}
+
+.searchbar {
+  padding-right: 0%
 }
 
 #search-term {
   background-color: rgba(255, 255, 255, 0.2);
   color:white;
+  margin-right: 90px
 }
 
 #brand {
@@ -98,6 +108,20 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
   font-family: 'Lucidatypewriter', monospace;
 }
 
+h5 {
+  color: white;
+  font-size: 1em;
+  font-weight: 100;
+  z-index: 3
+}
+
+.text {
+  margin-top: -30px;
+  margin-left: 25px;
+  margin-right: 900px;
+  opacity: 0.7;
+  z-index: 3
+}
 
 #login {
   color: white;
@@ -106,7 +130,6 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
   line-height: 1;
   text-align: center;
   font-family: 'Lucidatypewriter', monospace;
-  /*font-family: 'Andale Mono', monospace;*/
 }
 
 #login:hover {
@@ -130,14 +153,6 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
   margin-left: 90%;
 }
 
-
-/*#globe-container {
-  margin-left: auto;
-  margin-right: auto;
-  margin-bottom: auto;
-  margin-top: 0px
-}*/
-
 .navbar {
   opacity: 0.4;
   filter: alpha(opacity=40); /* For IE8 and earlier */
@@ -147,40 +162,3 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
 	width: 200px;
   text-align: center;
 }
-
-/*.overlay{
- display:none;
-}
-
-#overlays-container {
- position: fixed;
- text-align: center;
- width: 80%;
- height: 90%;
- top: 5%;
- left: 8%;
- background-color: rgba(0, 0, 0, .8);;
- border-style: solid;
- border-width: 5px;
- border-color: #4ECDC4 ;
- border-radius: 15px;
- z-index: 11;
- overflow: auto;
-}
-
-.overlay-element {
- position: relative;
- padding-right: 200px;
- top: 40%;
- transform: translateY(-50%);*/
-}
-
-/*#overlay-background {
- position: absolute;
- top: 0;
- left: 0;
- width: 100%;
- height: 100%;
- z-index: 10;
- background-color: rgba(0,0,0,0.5);
-/*}*/
